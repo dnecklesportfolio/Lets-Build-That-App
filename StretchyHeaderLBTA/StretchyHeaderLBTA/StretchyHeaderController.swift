@@ -21,8 +21,15 @@ class StretchyHeaderController: UICollectionViewController, UICollectionViewDele
         setupCollectionView()
     }
     
+    override var preferredStatusBarStyle:UIStatusBarStyle {
+        return .lightContent
+    }
+    
     fileprivate func setupCollectionView() {
         collectionView.backgroundColor = .white
+        //the top edge photo header meets margin
+        collectionView.contentInsetAdjustmentBehavior = .never
+        
         
         //instantiate cell
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellID)

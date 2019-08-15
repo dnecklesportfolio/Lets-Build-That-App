@@ -14,6 +14,8 @@
 		3A37BFE12305D34E00DF2F44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A37BFDF2305D34E00DF2F44 /* LaunchScreen.storyboard */; };
 		3A37BFE92305D3B900DF2F44 /* StretchyHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37BFE82305D3B900DF2F44 /* StretchyHeaderController.swift */; };
 		3A37BFEB2305DB0D00DF2F44 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37BFEA2305DB0D00DF2F44 /* HeaderView.swift */; };
+		3A37BFED2305E98B00DF2F44 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37BFEC2305E98B00DF2F44 /* Extensions+UIView.swift */; };
+		3A37BFEF2305F87C00DF2F44 /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37BFEE2305F87C00DF2F44 /* StretchyHeaderLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		3A37BFE22305D34E00DF2F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A37BFE82305D3B900DF2F44 /* StretchyHeaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderController.swift; sourceTree = "<group>"; };
 		3A37BFEA2305DB0D00DF2F44 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		3A37BFEC2305E98B00DF2F44 /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
+		3A37BFEE2305F87C00DF2F44 /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				3A37BFE22305D34E00DF2F44 /* Info.plist */,
 				3A37BFE82305D3B900DF2F44 /* StretchyHeaderController.swift */,
 				3A37BFEA2305DB0D00DF2F44 /* HeaderView.swift */,
+				3A37BFEC2305E98B00DF2F44 /* Extensions+UIView.swift */,
+				3A37BFEE2305F87C00DF2F44 /* StretchyHeaderLayout.swift */,
 			);
 			path = StretchyHeaderLBTA;
 			sourceTree = "<group>";
@@ -141,10 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A37BFEF2305F87C00DF2F44 /* StretchyHeaderLayout.swift in Sources */,
 				3A37BFE92305D3B900DF2F44 /* StretchyHeaderController.swift in Sources */,
 				3A37BFD92305D34D00DF2F44 /* ViewController.swift in Sources */,
 				3A37BFD72305D34D00DF2F44 /* AppDelegate.swift in Sources */,
 				3A37BFEB2305DB0D00DF2F44 /* HeaderView.swift in Sources */,
+				3A37BFED2305E98B00DF2F44 /* Extensions+UIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

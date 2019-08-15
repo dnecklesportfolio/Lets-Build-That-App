@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow()
-        window?.rootViewController = StretchyHeaderController(collectionViewLayout:UICollectionViewFlowLayout())
+        window?.rootViewController = StretchyHeaderController(collectionViewLayout:StretchyHeaderLayout())
         return true
     }
 
