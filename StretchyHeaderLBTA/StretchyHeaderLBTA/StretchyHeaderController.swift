@@ -10,20 +10,36 @@ import UIKit
 
 
 class StretchyHeaderController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
+    
     fileprivate let cellID = "cellID"
     fileprivate let headerID = "headerID"
+    fileprivate let padding: CGFloat = 16
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       collectionView.backgroundColor = .white
+        setupLayout()
+        setupCollectionView()
+    }
+    
+    fileprivate func setupCollectionView() {
+        collectionView.backgroundColor = .white
+        
         //instantiate cell
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellID)
         
         //instantiate header
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerID)
     }
+    
+    fileprivate func setupLayout() {
+        // MARK: - LAYOUT CUSTOMIZATION
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+            
+            layout.sectionInset = .init(top: padding, left: padding, bottom: padding, right: padding)
+            layout.minimumLineSpacing = 15
+        }
+    }
+    
     // MARK: - Setup Header
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerID, for: indexPath)
@@ -32,7 +48,7 @@ class StretchyHeaderController: UICollectionViewController, UICollectionViewDele
     
     //set header size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return .init(width: view.frame.width, height:340)
+        return .init(width: view.frame.width , height:340)
     }
     
     
@@ -50,6 +66,6 @@ class StretchyHeaderController: UICollectionViewController, UICollectionViewDele
     
     // set height and with of the cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width,height: 50)
+        return .init(width: view.frame.width - 2 * padding,height: 50)
     }
 }
