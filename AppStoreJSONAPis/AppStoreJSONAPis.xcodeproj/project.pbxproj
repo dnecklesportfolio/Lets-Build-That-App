@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AA44E3F230B90F100882B8D /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA44E3E230B90F100882B8D /* SearchResultCell.swift */; };
+		3AA44E43230B9B0600882B8D /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA44E42230B9B0600882B8D /* UIView+Layout.swift */; };
 		3AC12954230B5C6A000CC9BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12953230B5C6A000CC9BB /* AppDelegate.swift */; };
 		3AC12956230B5C6A000CC9BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12955230B5C6A000CC9BB /* ViewController.swift */; };
 		3AC12959230B5C6A000CC9BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC12957230B5C6A000CC9BB /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AA44E3E230B90F100882B8D /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		3AA44E42230B9B0600882B8D /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		3AC12950230B5C6A000CC9BB /* AppStoreJSONAPis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreJSONAPis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC12953230B5C6A000CC9BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AC12955230B5C6A000CC9BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AA44E40230B918B00882B8D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3AA44E3E230B90F100882B8D /* SearchResultCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3AA44E41230B9AEC00882B8D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3AA44E42230B9B0600882B8D /* UIView+Layout.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		3AC12947230B5C69000CC9BB = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +78,9 @@
 		3AC12952230B5C6A000CC9BB /* AppStoreJSONAPis */ = {
 			isa = PBXGroup;
 			children = (
+				3AA44E41230B9AEC00882B8D /* Helpers */,
+				3AA44E40230B918B00882B8D /* Views */,
 				3AC12968230B78EE000CC9BB /* Controller */,
-				3AC12965230B5CE7000CC9BB /* BaseTabBarController.swift */,
 				3AC1295A230B5C7A000CC9BB /* Assets.xcassets */,
 				3AC12967230B7578000CC9BB /* Other */,
 				3AC1295F230B5C7A000CC9BB /* Info.plist */,
@@ -81,6 +102,7 @@
 		3AC12968230B78EE000CC9BB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3AC12965230B5CE7000CC9BB /* BaseTabBarController.swift */,
 				3AC12969230B7909000CC9BB /* AppSearchController.swift */,
 			);
 			path = Controller;
@@ -159,8 +181,10 @@
 			files = (
 				3AC12956230B5C6A000CC9BB /* ViewController.swift in Sources */,
 				3AC12954230B5C6A000CC9BB /* AppDelegate.swift in Sources */,
+				3AA44E43230B9B0600882B8D /* UIView+Layout.swift in Sources */,
 				3AC12966230B5CE7000CC9BB /* BaseTabBarController.swift in Sources */,
 				3AC1296A230B7909000CC9BB /* AppSearchController.swift in Sources */,
+				3AA44E3F230B90F100882B8D /* SearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
