@@ -99,9 +99,7 @@ class SearchResultCell: UICollectionViewCell {
         
         //Stacks within Stacks
         //labels vertical
-        
-        
-        
+ 
         //info horizontal
         let infoTopstackView = UIStackView(arrangedSubviews: [appIconImageView,            VerticalStackView(arrangedSubviews: [nameLabel, categoryLabel,ratingsLabel]),getButton])
         infoTopstackView.spacing = 12
