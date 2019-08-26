@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class BaseListController :UICollectionViewController {
+class BaseCollectionViewController :UICollectionViewController {
     
     
     init() {

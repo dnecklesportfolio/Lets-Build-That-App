@@ -12,10 +12,10 @@ class AppsHorizontalController: BaseListController, UICollectionViewDelegateFlow
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .white
         
         // once you create custom class replace UICollView with class
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(AppRowCell.self, forCellWithReuseIdentifier: cellId)
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout
         {
@@ -29,16 +29,17 @@ class AppsHorizontalController: BaseListController, UICollectionViewDelegateFlow
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .red
+       
         return cell
     }
     
-    let topBottomPadding:CGFloat = 12
-    let lineSpacing:CGFloat = 10
+    let topBottomPadding:CGFloat = 24
+    let lineSpacing:CGFloat = 20
+    
     //height width
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = (view.frame.height - 2 * topBottomPadding + 2 * lineSpacing) / 3
-        return .init(width: view.frame.width, height: height)
+        let height = (self.view.frame.height - 2 * topBottomPadding - 2 * lineSpacing) / 3
+        return .init(width: view.frame.width - 48, height: height)
     }
     //line spacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
