@@ -7,15 +7,32 @@
 //
 
 import UIKit
-class AppsPageController:BaseListController, UICollectionViewDelegateFlowLayout {
-    let cellId = "id"
+class AppsPageController:BaseListController, UICollectionViewDelegateFlowLayout
+    {
     
+    let cellId = "id"
+    let headerId = "headerid"
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
         
         // once you create custom class replace UICollView with class
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: cellId)
+        
+        ///header
+         collectionView.register(AppsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+    }
+    
+    //spawn header
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
+        
+        return header
+    }
+    
+    //3 size of header
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: view.frame.width, height: 300)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -31,10 +48,9 @@ class AppsPageController:BaseListController, UICollectionViewDelegateFlowLayout 
         return .init(width: view.frame.width, height: 340)
     }
 
-    //cell spacing
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top:16, left:0 ,bottom:0 , right:0)
-    }
+    
+    
+    
 //      Functions below were moved to BaseListController.swift to reduce repeated code
 //    init() {
 //        super.init(collectionViewLayout: UICollectionViewFlowLayout())
