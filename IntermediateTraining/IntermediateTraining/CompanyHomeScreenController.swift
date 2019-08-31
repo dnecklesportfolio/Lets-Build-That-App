@@ -7,30 +7,51 @@
 //
 
 import UIKit
+import CoreData
 
 
 
-
-// UITblVC class creates a list w lines
+// UITableViewController class creates a list w lines
 class CompanyController: UITableViewController, CreateCompanyControllerDelegate {
     
-//    func didAddCompany(company:Company) {
-//        // modify array append function
-//        companies.append(company)
-//        
-//        //insert new index path in tableview
-//        let newIndexPath = IndexPath(row: companies.count - 1, section: 0)
-//        tableView.insertRows(at: [newIndexPath], with: .automatic )
-//    }
-//    
-//    
+    func didAddCompany(company:Company) {
+        // modify array append function
+        companies.append(company)
+        
+        //insert new index path in tableview
+        let newIndexPath = IndexPath(row: companies.count - 1, section: 0)
+        tableView.insertRows(at: [newIndexPath], with: .automatic )
+    }
+    
+    
     
     var companies = [Company]()
  
+    private func fetchCompanies() {
+        let persistentContainer = NSPersistentContainer(name: "Model")
+        persistentContainer.loadPersistentStores { (storeDescription, err) in
+            if let err = err {
+                fatalError("Loading of store failed: \(err)")
+            }
+        }
+        
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Company>(entityName: "Company")
+        do {
+          let companies = try context.fetch(fetchRequest)
+            companies.forEach { (company) in
+                print(company.name ?? "")
+            }
+        } catch let fetchErr {
+            print("failed to fetch companies", fetchErr)
+    }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchCompanies()
         // Do any additional setup after loading the view.
-        
+        fetchCompanies()
         view.backgroundColor = .darkBlue 
         
         navigationItem.title = "Companies"
